@@ -1,0 +1,13 @@
+<h1>User update here</h1>
+<% @user.errors.full_messages.each do |message| %>
+  <div><%= message %></div>
+<% end %>
+<%= form_with model: @user do |form| %>
+  <%= form.label :email, "Please input your email" %> <br>
+  <%= form.text_field :email, placeholder: "example@example.com" %> <br><br>
+  <%= form.label :username, "Set a username" %> <br>
+  <%= form.text_field :username %> <br><br>
+  <%= form.label :password, "Provide a secure password" %> <br>
+  <%= form.password_field :password %> <br><br>
+  <%= form.submit %> <br>
+<% end %>
